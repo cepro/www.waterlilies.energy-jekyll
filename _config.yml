@@ -1,4 +1,4 @@
-baseurl: ''
+baseurl: 'https://cepro.github.io/www.waterlilies.energy-jekyll'
 permalink: /:title/
 title: 'Water Lilies Community Energy'
 
