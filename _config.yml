@@ -1,6 +1,6 @@
 baseurl: ''
 permalink: /:title/
-title: 'Mappix'
+title: 'Water Lilies Community Energy'
 
 google_analytics_id: ""
 
@@ -15,11 +15,12 @@ footer:
   copyright_text: 'You can start and finish one of these popular software landing in under a day - for free! Check the list below'
 
 seo:
-  meta_og_title: "Mappix Theme"
+  meta_og_title: "Water Lilies Community Energy"
   meta_og_type: "website"
   meta_og_url: "https://themeplugs.com"
   meta_og_image: "g"
-  meta_og_description: "Mappix - SaaS, Startup and Multi-Purpose Theme powered by Jekyll"
+  meta_og_description: "Water Lilies Energy"
+  meta_og_keywords: "The Water Lilies Community Energy company has been created to provide you with: Cheaper bills, Lower carbon footprint, Simple pricing and flat rate tariff, Integrated EV charging, Smart Heat"
   meta_twitter_card: "summary"
   meta_twitter_site: "@mappix"
   meta_twitter_creator: "@mappix"

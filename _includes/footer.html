@@ -1,70 +1,12 @@
-<!-- footer -->
-<footer class="footer">
-    <div class="footer-top footer-top-1 bg-2">
-        <div class="container">
-            <div class="row gutter-30">
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-widget">
-                        <div class="footer-logo">
-                            <a href="{{site.baseurl}}/">
-                                <img src="{{ site.logo.light | relative_url }}" alt="{{ site.title }}"/>
-                            </a>
-                        </div>
-                        
-                        {% if site.footer.copyright_text %}
-                            <p class="widget-text">
-                                {{ site.footer.copyright_text }}
-                            </p>
-                        {% endif %}
-
-                        {% if site.data.social %}
-                        <ul class="footer-social">
-                            <li class="list-text">Follow Us :</li>
-                        {% include social.html %}
-                        </ul>
-                        {% endif %}
-                        
-                    </div>
-                </div><!--  ./col -->
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-widget">
-                        <h4 class="widget-title">{{ site.data.menus.footer_menu_one_title }}</h4>
-                        <ul class="widget-list">
-                            {% for item in site.data.menus.menu_one %}
-                                <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div><!--  ./col -->
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-widget">
-                        <h4 class="widget-title">{{ site.data.menus.footer_menu_two_title }}</h4>
-                        <ul class="widget-list">
-                            {% for item in site.data.menus.menu_two %}
-                                <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div><!--  ./col -->
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-widget">
-                        <h4 class="widget-title">{{ site.data.menus.footer_menu_three_title }}</h4>
-                        <ul class="widget-list">
-                            {% for item in site.data.menus.menu_three %}
-                                <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div><!-- ./col -->
-            </div><!-- ./row -->
-        </div><!-- ./container -->
-    </div><!-- ./footer-top -->
-</footer><!-- ./footer -->
-
-<!-- back to top -->
-<a href="#" id="back-to-top">
-  <i class="fas fa-level-up-alt"></i>
-</a>
+ <!-- Site Footer - Start
+      ================================================== -->
+      <footer class="site-footer">
+        <div class="container-fluid">
+          <ul class="contact-info-list">
+            <li><a href="mailto:hello@waterlilies.energy"><strong>Email:</strong> hello@waterlilies.energy</a></li>
+            <li><a href="tel:+443308283096"><strong>Phone:</strong> +44 330 828 3096</a></li>
+          </ul>
+        </div>
+      </footer>
+      <!-- Site Footer - End
+      ================================================== -->

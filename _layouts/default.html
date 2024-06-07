@@ -3,13 +3,20 @@
 <head>
   <meta charset="utf-8">
   <title>{% if page.title %}{{page.title}}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <meta name="thumbnail" content="assets/images/template_thumbnail.webp">
+  <meta name="keywords" content="{{ site.seo.meta_og_keywords }}">
+
+
   <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.ico' | relative_url }}">
   <link href="{{ '/assets/css/style.css' | relative_url }}" rel="stylesheet">
 
   {% if page.description %}
   <meta name="description" content="{{ page.description }}" />
   {% endif %}
+
   <meta property="og:title" content="{{ site.seo.meta_og_title }}" />
   <meta property="og:type" content="{{ site.seo.meta_og_type }}" />
   <meta property="og:url" content="{{ site.seo.meta_og_url }}" />
@@ -18,21 +25,17 @@
   <meta name="twitter:card" content="{{ site.seo.meta_twitter_card }}" />
   <meta name="twitter:site" content="{{ site.seo.meta_twitter_site }}" />
   <meta name="twitter:creator" content="{{ site.seo.meta_twitter_creator }}" />
+  <meta name="author" content="waterlilies.energy">
+
+
+
 </head>
 <body class='page {{page.bodyClass}}'>
-   <!-- start preloader -->
-   <div id="loading">
-      <div id="loading-center">
-        <div id="loading-center-absolute">
-            <div id="object"></div>
-        </div>
-      </div>
-  </div>
-  <!-- end preloader -->
-  
-  <div id="wrapper" class="wrapper">
+  <div id="wrapper" class="page_wrapper">
     {% include header.html headerClass='header-extra' %}
-    {{content}}
+    <div class="page-content">
+      {{content}}
+    </div>
   </div>
   {% include footer.html %}
   <script type="text/javascript" src="{{ '/assets/js/jquery.js' | relative_url }}"></script>
