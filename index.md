@@ -5,6 +5,6 @@ description: "Water Lilies Energy"
 ---
 
 
-{% include hero-section.html %}
+{% include homepage.html %}
 
 
