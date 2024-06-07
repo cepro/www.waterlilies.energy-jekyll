@@ -1,0 +1,20 @@
+<!-- start blog area -->
+<section class="blog-area section-padding">
+    <div class="container">
+        <div class="row gutter-60">
+            <div class="col-lg-8">
+                <div class="row gutter-40">
+                    {% for post in site.posts limit:3 %}
+                    <div class="col-12">
+                        {% include post-card.html %}
+                    </div><!--  ./col -->
+                    {% endfor %}
+                </div><!-- inner -->
+            </div><!-- end col -->
+            <div class="col-lg-4">
+                {% include blog/sidebar.html %}
+            </div><!-- end col -->
+        </div><!-- end row -->
+        
+    </div><!-- end container -->
+</section><!-- start blog area -->

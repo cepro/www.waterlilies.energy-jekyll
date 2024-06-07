@@ -1,0 +1,60 @@
+baseurl: ''
+permalink: /:title/
+title: 'Mappix'
+
+google_analytics_id: ""
+
+homepage:
+  show_call_box: true
+
+logo:
+  main: "assets/images/logo.png"
+  light: "assets/images/logo-light.png"
+
+footer:
+  copyright_text: 'You can start and finish one of these popular software landing in under a day - for free! Check the list below'
+
+seo:
+  meta_og_title: "Mappix Theme"
+  meta_og_type: "website"
+  meta_og_url: "https://themeplugs.com"
+  meta_og_image: "g"
+  meta_og_description: "Mappix - SaaS, Startup and Multi-Purpose Theme powered by Jekyll"
+  meta_twitter_card: "summary"
+  meta_twitter_site: "@mappix"
+  meta_twitter_creator: "@mappix"
+
+collections:
+  category:
+    output: false
+
+sass:
+  indentWidth: 4
+  style: compact # possible values: nested expanded compact compressed
+  precision: 10
+  sass_dir: _sass
+
+plugins:
+  - jekyll-environment-variables
+
+gems: ['kramdown']
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - LICENSE.md
+  - LICENSE
+  - README.md
+  - vendor
+  - Procfile
+  - Rakefile
+
+# for github pages setup uncomment the code and set to your domain
+# domain: yourdomain.com      # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
+# url: https://yourdomain.com  # the base hostname and protocol for your site, e.g. http://example.com
+# baseurl:       # place folder name if the site is served in a subfolder   

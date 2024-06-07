@@ -1,0 +1,35 @@
+[
+    {
+        "title": "How can I install mappix app?",
+        "collapse" : "collapseOne",
+        "show" : "show",
+        "description": "No more switching between apps to get your daily industry news updates. Vincent eliminates Plan, collaborate, and schedule content for all your social channels."
+    },
+    {
+        "title": "When app update automatically?",
+        "collapse" : "collapsetwo",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, iure. Exratione enim qui error consequatur, cum totam ipsa laudantium rerum natus? Asperiores quaerat, assumenda repellat quasi molestias dolores eaque."
+    }, 
+    {
+        "title": "Can i get refund?",
+        "collapse" : "collapsethree",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, iure. Ex
+        ratione enim qui error consequatur, cum totam ipsa laudantium rerum natus?
+        Asperiores quaerat, assumenda repellat quasi molestias dolores eaque."
+    },    
+    {
+        "title": "What is distance education?",
+        "collapse" : "collapsefour",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, iure. Exratione enim qui error consequatur, cum totam ipsa laudantium rerum natus? Asperiores quaerat, assumenda repellat quasi molestias dolores eaque."
+    },    
+    {
+        "title": "How can I install mappix app?",
+        "collapse" : "collapsefive",
+        "description": "No more switching between apps to get your daily industry news updates. Vincent eliminates Plan, collaborate, and schedule content for all your social channels."
+    },    
+    {
+        "title": "When app update automatically?",
+        "collapse" : "collapsesix",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, iure. Exratione enim qui error consequatur, cum totam ipsa laudantium rerum natus? Asperiores quaerat, assumenda repellat quasi molestias dolores eaque." 
+    }    
+]

@@ -1,0 +1,24 @@
+<!-- start blog section -->
+<section class="blog-section  bg-primary-light section-padding">
+    <div class="container">
+       <div class="row">
+          <div class="col-12 text-center">
+             <div class="block-content">
+                <h2 class="block-heading">
+                   <span class="sub-heading">Mappix Blog</span>
+                   <strong><span class="highlight">Mappix Customer</span> Stories</strong>
+                </h2>
+                <div class="gap"></div>
+             </div>
+          </div><!--  ./col -->
+       </div><!-- ./row -->
+
+        <div class="row gutter-40 justify-content-center">
+         {% for post in site.posts limit:3 %}
+         <div class="col-lg-4 col-md-6">
+            {% include post-card.html %}
+         </div><!--  ./col -->
+         {% endfor %}
+        </div><!-- ./row -->
+    </div><!--  ./container  -->
+</section><!-- end blog section -->

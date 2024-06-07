@@ -1,0 +1,20 @@
+  <!--  start banner-->
+  <section class="banner banner-box" style="background-image: url({{ page.banner_image | relURL }});">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-md-7">
+                <div class="tp-block-content tp-banner-content">
+                    <h1 class="page-title">
+                        {{ page.title }}
+                    </h1>
+                    <div>
+                        <ul class="breadcrumb banner-breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{site.baseurl}}/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"> {{ page.title }} </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end banner -->

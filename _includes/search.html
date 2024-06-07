@@ -1,0 +1,22 @@
+<div id="search-container" >
+	<div class="tp-form search-form mb-30">
+		<div class="form-group">
+			<input type="text" class="form-input searchfield form-control form-search" id="search-input" placeholder="search...">
+			<button type="submit" class="search-btn input-submit-btn">
+				<i class="fas fa-search"></i>
+			</button>
+		</div>
+		<ul id="results-container"></ul>
+	</div><!-- end search form -->
+</div>
+
+<!-- Script pointing to search-script.js -->
+<script src="{{ '../assets/js/search.js' | relative_url }}" type="text/javascript"></script>
+
+<script>
+	SimpleJekyllSearch({
+		searchInput: document.getElementById('search-input'),
+		resultsContainer: document.getElementById('results-container'),
+		json: '/search.json'
+	});
+</script>

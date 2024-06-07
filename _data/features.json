@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Location Track",
+    "description": "No more switching between apps to get your daily industry news.",
+    "image": "../assets/images/map-icon.png"
+  },
+  {
+    "title": "Permissions",
+    "description": "Way to introduce Software products of our team are certified accountants.",
+    "image": "../assets/images/security-icon.png"
+  },
+  {
+    "title": "Notifications",
+    "description": "We stay up to date on the latest changes to the tax code over the world.",
+    "image": "../assets/images/notification-icon.png"
+  },
+  {
+    "title": "Collection",
+    "description": "Mappix Sass switching between apps to get your daily industry news.",
+    "image": "../assets/images/layer-icon2.png"
+  }
+]

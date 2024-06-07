@@ -1,0 +1,64 @@
+<!-- blog sidebar -->
+<div class="blog-sidebar">
+    {% include search.html %}
+
+    <div class="blog-post-wrapper recent-post">
+        <div class="post-widget">
+            <h4 class="widget-title">
+                Latest Posts
+            </h4>
+            <ul class="post-list gutter-30">
+                {% for post in site.posts limit:3 %}
+                <li class="post-item">
+                    {% if post.image %}
+                    <div class="post-thumbs">
+                        <a href="{{ post.url }}">
+                            <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+                        </a>
+                    </div>
+                    {% endif %}
+                    <div class="post-content">
+                        <h5 class="post-title">
+                            <a href="{{ post.url }}">
+                                {{ post.title }}
+                            </a>
+                        </h5>
+                        <ul class="post-meta">
+                            <li>
+                            {% if site.date_format %}
+                                {{ post.date | date: site.date_format }}
+                            {% else %}
+                                {{ post.date | date: "%b %-d, %Y" }}
+                            {% endif %}
+                        </li>
+                        </ul>
+                    </div>
+                </li>
+                <!--  ./col -->
+                {% endfor %}               
+            </ul>
+        </div><!-- end post widget -->
+        
+        <div class="post-widget">
+            <img class="img-fluid" src="../../assets/images/banner-apps.jpg" alt="Apps Banner">
+        </div><!-- end post widget -->
+
+        <div class="post-widget">
+            <h4 class="widget-title">
+                Follow Us
+            </h4>
+
+            <ul class="social style2">
+               {% include social.html %}
+            </ul>
+
+            {% for category in site.categories %}
+                <div class="archive-group">
+                    {% capture category_name %}{{ category | first }}{% endcapture %}
+              
+                   
+                </div>
+            {% endfor %}
+        </div><!-- end post widget -->
+    </div><!-- end blog-post-wrapper -->
+</div><!-- ./sidebar -->

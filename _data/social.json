@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Facebook",
+    "link": "https://facebook.com/",
+    "icon": "fab fa-facebook-f"
+  },
+  {
+    "name": "Pinterest",
+    "link": "https://twitter.com/",
+    "icon": "fab fa-pinterest-p"
+  },
+  {
+    "name": "Github",
+    "link": "https://github.com/",
+    "icon": "fab fa-github"
+  }
+]
