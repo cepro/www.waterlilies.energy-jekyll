@@ -1,4 +1,4 @@
-# Mappix Theme
+# Starter Theme
 
 ### Installing Ruby & Jekyll
  
