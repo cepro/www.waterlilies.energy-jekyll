@@ -3,7 +3,7 @@
 <section class="hero-section section-space" style="background-image: url('{{ site.url }}{{ site.baseurl }}/assets/images/cepro-illa-water-lillies.webp');">
   <div class="container">
     <div class="hero-image">
-      <img src="{{ site.url }}{{ site.baseurl }}/assets/images/site-logo.webp" alt="Water Lilies Community Energy">
+      <img src="{{ site.url }}{{ site.baseurl }}/assets/images/site-logo.webp" alt="{{ site.title }}">
     </div>
   </div>
 </section>
@@ -17,23 +17,21 @@
   <div class="container">
     <div class="row">
       <div class="about-image">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/water-lilies-battery-landing.webp" alt="Water Lilies Battery Landing">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/{{ site.esco.image.filename }}" alt="{{ site.esco.image.alt }}">
       </div>
       <div class="about-content">
         <h2 class="heading-title">
           Community Energy Reinvented
         </h2>
         <p class="heading-description">
-          Bright Green Futures, Clean Energy Prospector, and Bristol Energy Co-operative have partnered to design a
-          microgrid at the Water Lilies housing development in Kingsweston, Bristol that is redeﬁning the way housing
-          estates provide an energy service to its residents.
+          {{ site.esco.description }}
         </p>
         <p>
           As the technology behind solar PV panels, inverters, and battery energy storage systems has improved, it has
           now become possible to build a microgrid system that shares key parts of the infrastructure, and get the
-          beneﬁt of scale across a small site such as Water Lilies.
+          beneﬁt of scale across a small site such as {{ site.esco.name }}.
         </p>
-        <a class="btn" href="https://app.waterlilies.energy">
+        <a class="btn" href="{{ site.esco.app_url }}">
           Customer Log In
         </a>
       </div>
@@ -56,9 +54,7 @@
           <u>Your Impact Investor</u>
         </h2>
         <p class="heading-description">
-          Bright Green Futures, Clean Energy Prospector, and Bristol Energy Co-operative have partnered to design a
-          microgrid at the Water Lilies housing development in Kingsweston, Bristol that is redeﬁning the way housing
-          estates provide an energy service to its residents.
+          {{ site.esco.investor_description }}
         </p>
       </div>
     </div>
@@ -76,7 +72,7 @@
         <div class="benefit-content">
           <h2 class="heading-title">The Benefits</h2>
           <p class="heading-description">
-            The Water Lilies Community Energy company has been created to provide you with:
+            The {{ site.title }} company has been created to provide you with:
           </p>
           <ul>
             <li>✔ Cheaper bills</li>
