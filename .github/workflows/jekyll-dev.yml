@@ -1,7 +1,8 @@
-# Development branch deployment workflow
-# Deploys the dev branch to GitHub Pages at https://cepro.github.io/www.waterlilies.energy-jekyll/
+# Development branch deployment to Fly.io
+# Deploys the dev branch to Fly.io for testing
+# Production remains on GitHub Pages
 
-name: Deploy Dev Branch to GitHub Pages
+name: Deploy Dev Branch to Fly.io
 
 on:
   # Runs on pushes to dev branch
@@ -11,52 +12,28 @@ on:
   # Allows manual trigger from Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 # Allow only one concurrent deployment
 concurrency:
-  group: "pages-dev"
+  group: "fly-dev"
   cancel-in-progress: false
 
 jobs:
-  # Build job
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1.201.0
-        with:
-          ruby-version: '3.3.6'
-          bundler-cache: true
-          cache-version: 0
-          
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
+      - name: Setup Fly.io
+        uses: superfly/flyctl-actions/setup-flyctl@master
         
-      - name: Build with Jekyll for Dev
-        run: bundle exec jekyll build --config "_config.yml,_config_dev.yml"
+      - name: Deploy to Fly.io
+        run: flyctl deploy --remote-only
         env:
-          JEKYLL_ENV: development
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
           
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages-dev
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Get deployment URL
+        run: |
+          echo "✅ Deployment completed!"
+          echo "🚀 Dev site available at: https://waterlilies-dev.fly.dev"
+          echo "📝 Note: First deployment requires 'fly launch' to be run locally"

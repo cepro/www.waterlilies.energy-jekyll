@@ -1,9 +1,9 @@
 # Development environment configuration
-# This file overrides settings in _config.yml for the dev branch deployment
+# This file overrides settings in _config.yml for the dev branch deployment on Fly.io
 
-# GitHub Pages default URL for the repository
-url: https://cepro.github.io
-baseurl: /www.waterlilies.energy-jekyll
+# Fly.io dev deployment URL
+url: https://waterlilies-dev.fly.dev
+baseurl: ""
 
 # Development environment indicator
 environment: development

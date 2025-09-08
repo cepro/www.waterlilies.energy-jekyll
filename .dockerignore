@@ -1,0 +1,13 @@
+.git
+.gitignore
+.github
+*.md
+.jekyll-cache
+_site
+vendor
+.bundle
+fly.toml
+Dockerfile
+.dockerignore
+*.log
+.DS_Store
