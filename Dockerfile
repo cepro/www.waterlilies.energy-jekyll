@@ -30,11 +30,21 @@ FROM nginx:alpine
 # Copy built site from builder stage
 COPY --from=builder /app/_site /usr/share/nginx/html
 
+# Create nginx config for port 8080
+RUN echo 'server { \
+    listen 8080; \
+    listen [::]:8080; \
+    server_name _; \
+    root /usr/share/nginx/html; \
+    index index.html index.htm; \
+    location / { \
+        try_files $uri $uri/ /index.html; \
+    } \
+    error_page 404 /404.html; \
+}' > /etc/nginx/conf.d/default.conf
+
 # Expose port 8080 for Fly.io
 EXPOSE 8080
-
-# Configure nginx to listen on port 8080
-RUN sed -i 's/listen       80;/listen       8080;/g' /etc/nginx/conf.d/default.conf
 
 # Start nginx
 CMD ["nginx", "-g", "daemon off;"]
