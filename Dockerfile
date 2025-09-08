@@ -24,11 +24,17 @@ COPY . .
 # Build the Jekyll site with dev config
 RUN bundle exec jekyll build --config _config.yml,_config_dev.yml
 
+# Debug: List the contents to verify build
+RUN ls -la /app/_site/
+
 # Production stage - serve static files with nginx
 FROM nginx:alpine
 
+# Remove default nginx index page
+RUN rm -rf /usr/share/nginx/html/*
+
 # Copy built site from builder stage
-COPY --from=builder /app/_site /usr/share/nginx/html
+COPY --from=builder /app/_site/ /usr/share/nginx/html/
 
 # Create nginx config for port 8080
 RUN echo 'server { \
