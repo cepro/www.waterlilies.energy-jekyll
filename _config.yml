@@ -59,6 +59,11 @@ exclude:
   - vendor
   - Procfile
   - Rakefile
+  - Dockerfile
+  - .dockerignore
+  - fly.toml
+  - .github
+  - bin/
 
 # for local run
 url: http://0.0.0.0:4000

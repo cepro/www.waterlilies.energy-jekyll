@@ -1,0 +1,39 @@
+# Development branch deployment to Fly.io
+# Deploys the dev branch to Fly.io for testing
+# Production remains on GitHub Pages
+
+name: Deploy Dev Branch to Fly.io
+
+on:
+  # Runs on pushes to dev branch
+  push:
+    branches: ["dev"]
+  
+  # Allows manual trigger from Actions tab
+  workflow_dispatch:
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "fly-dev"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Fly.io
+        uses: superfly/flyctl-actions/setup-flyctl@master
+        
+      - name: Deploy to Fly.io
+        run: flyctl deploy --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+          
+      - name: Get deployment URL
+        run: |
+          echo "✅ Deployment completed!"
+          echo "🚀 Dev site available at: https://waterlilies-dev.fly.dev"
+          echo "📝 Note: First deployment requires 'fly launch' to be run locally"
