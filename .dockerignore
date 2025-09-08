@@ -1,7 +1,8 @@
 .git
 .gitignore
 .github
-*.md
+README.md
+LICENSE.md
 .jekyll-cache
 _site
 vendor

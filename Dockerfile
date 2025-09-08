@@ -22,19 +22,26 @@ RUN bundle config set --local deployment 'true' && \
 COPY . .
 
 # Build the Jekyll site with dev config
+ENV JEKYLL_ENV=development
 RUN bundle exec jekyll build --config _config.yml,_config_dev.yml
 
 # Debug: List the contents to verify build
-RUN ls -la /app/_site/
+RUN ls -la /app/_site/ && \
+    echo "=== Checking for index.html ===" && \
+    ls -la /app/_site/index.html || echo "No index.html found!"
 
 # Production stage - serve static files with nginx
 FROM nginx:alpine
 
-# Remove default nginx index page
+# Remove default nginx files
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy built site from builder stage
 COPY --from=builder /app/_site/ /usr/share/nginx/html/
+
+# Set proper permissions
+RUN chmod -R 755 /usr/share/nginx/html && \
+    chown -R nginx:nginx /usr/share/nginx/html
 
 # Create nginx config for port 8080
 RUN echo 'server { \
@@ -44,9 +51,13 @@ RUN echo 'server { \
     root /usr/share/nginx/html; \
     index index.html index.htm; \
     location / { \
-        try_files $uri $uri/ /index.html; \
+        try_files $uri $uri/ =404; \
     } \
     error_page 404 /404.html; \
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|webp)$ { \
+        expires 1y; \
+        add_header Cache-Control "public, immutable"; \
+    } \
 }' > /etc/nginx/conf.d/default.conf
 
 # Expose port 8080 for Fly.io
