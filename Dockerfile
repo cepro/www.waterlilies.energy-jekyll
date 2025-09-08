@@ -1,5 +1,5 @@
 # Build stage
-FROM ruby:3.3.6-alpine AS builder
+FROM ruby:3.4-alpine AS builder
 
 # Install build dependencies
 RUN apk add --no-cache \
